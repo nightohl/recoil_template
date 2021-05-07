@@ -14,13 +14,10 @@ const COLORS = {
 const Box = ({id}) => {
   const [box, setBox] = useRecoilState(boxState(id));
   const color = useRecoilValue(colorState);
-  const setColor = () => {
-    setBox(color);
-  };
   return (
     <TouchableOpacity
       style={[styles.box, {backgroundColor: box}]}
-      onPress={setColor}
+      onPress={() => setBox(color)}
     />
   );
 };

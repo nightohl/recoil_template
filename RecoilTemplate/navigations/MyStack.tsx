@@ -6,6 +6,7 @@ import {RootMyStackParamList} from 'Navigation';
 import Collections from '@components/Collections';
 import BasicCounter from '@components/BasicCounter';
 import ColorBoxes from '@components/ColorBoxes';
+import SearchAnimation from '@components/SearchAnimation';
 
 const Stack = createStackNavigator<RootMyStackParamList>();
 
@@ -16,6 +17,7 @@ export default function MyStack() {
         <Stack.Screen name="Collections" component={Collections} />
         <Stack.Screen name="BasicCounter" component={BasicCounter} />
         <Stack.Screen name="ColorBoxes" component={ColorBoxes} />
+        <Stack.Screen name="SearchAnimation" component={SearchAnimation} />
       </Stack.Navigator>
     </RecoilRoot>
   );
