@@ -38,24 +38,8 @@ $ npx react-native run-ios
 * `selector`의 `get` 함수를 정의함으로써, `atom` 상태값을 이용하여 필요한 연산을 거쳐 가공된,파생된 결과 값을 반환받을 수 있다.
 * `selector`의 `set` 함수를 정의함으로써, `atom` 상태값을 이용하여 필요한 연산을 거친 후 가공된,파생된 결과 값을 atom에 반영시킬 수 있다.
 * `get`과 `set`을 모두 정의한 경우 `useRecoilState`를 이용하여 아래와 같이 Hook으로 반환받아 사용할 수 있다:
-```js
-const [state, setState] = useRecoilState(셀렉터);
-```
 * `selector`는 자신이 어떤 `atom`들을 의존하고 있는지, 또 어떤 컴포넌트들이 자신을 필요로하는지를 추적하기 때문에 상태가 변화하면 연관된 컴포넌트들도 다시 렌더링 된다.
----
-### 3. SearchAnimation
-React 동시성 모드의 일부기능인 `Suspense`를 활용한 비동기 처리 예시
 
-<html>
-  <img src="https://user-images.githubusercontent.com/48432932/117421167-4173f280-af59-11eb-9ee7-e14c5d92c511.png", height="500px">
-</html>
-
-```js
-<Suspense fallback={<Text>비동기 처리가 완료되기까지 보여질 컴포넌트</Text>}>
-  <비동기_요청을_보내는_컴포넌트 />
-</Suspense>
-```
-* `selector`의 `get` 메소드 정의 시 `async & await`으로 작성하면 된다.
 ```js
 // 셀렉터 정의
 
@@ -80,4 +64,35 @@ export const 셀렉터 = selector({
 // 가공된 상태값이 필요한 컴포넌트
 
 const [value, setValue] = useRecoilState(셀렉터); // 그냥 hook 쓰듯이 쓰면 된다.
+```
+
+---
+### 3. SearchAnimation
+React 동시성 모드의 일부기능인 `Suspense`를 활용한 비동기 처리 예시
+
+<html>
+  <img src="https://user-images.githubusercontent.com/48432932/117421167-4173f280-af59-11eb-9ee7-e14c5d92c511.png", height="500px">
+</html>
+
+```js
+<Suspense fallback={<Text>비동기 처리가 완료되기까지 보여질 컴포넌트</Text>}>
+  <비동기_요청을_보내는_컴포넌트 />
+</Suspense>
+```
+
+* `selector`의 `get` 메소드 정의 시 `async & await`으로 작성하면 된다:
+```js
+export const 비동기_셀렉터 = selector({
+  key: '유니크한_키',
+  get: async ({get}) => {
+    const param = get(아톰);
+
+    const response = await fetch(
+      `https://your.api.com/?param=${param}`,
+    );
+    const data = await response.json();
+
+    return data.results;
+  },
+});
 ```
