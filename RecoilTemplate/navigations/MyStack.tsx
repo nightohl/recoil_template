@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {RecoilRoot} from 'recoil';
 import {RootMyStackParamList} from 'Navigation';
 
-import Collections from '@components/Collections';
+import Collections from '@screens/Collections';
 import BasicCounter from '@components/BasicCounter';
 import ColorBoxes from '@components/ColorBoxes';
 import SearchAnimation from '@components/SearchAnimation';
