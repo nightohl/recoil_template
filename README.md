@@ -37,7 +37,7 @@ $ npx react-native run-ios
 
 * `selector`의 `get` 함수를 정의함으로써, `atom` 상태값을 이용하여 필요한 연산을 거쳐 가공된,파생된 결과 값을 반환받을 수 있다.
 * `selector`의 `set` 함수를 정의함으로써, `atom` 상태값을 이용하여 필요한 연산을 거친 후 가공된,파생된 결과 값을 atom에 반영시킬 수 있다.
-* `get`과 `set`을 모두 정의한 경우 `useRecoilState`를 이용하여 아래와 같이 Hook으로 반환받아 사용할 수 있다:
+* `get`과 `set`을 모두 정의한 경우 `useRecoilState`를 이용하여 아래와 같이 Hook으로 반환받아 사용할 수 있다.
 * `selector`는 자신이 어떤 `atom`들을 의존하고 있는지, 또 어떤 컴포넌트들이 자신을 필요로하는지를 추적하기 때문에 상태가 변화하면 연관된 컴포넌트들도 다시 렌더링 된다.
 
 ```js
@@ -80,7 +80,7 @@ React 동시성 모드의 일부기능인 `Suspense`를 활용한 비동기 처�
 </Suspense>
 ```
 
-* `selector`의 `get` 메소드 정의 시 `async & await`으로 작성하면 된다:
+* `selector`에서 비동기 요청이 필요한 함수 정의 시 그냥 `async & await`으로 작성하면 된다:
 ```js
 export const 비동기_셀렉터 = selector({
   key: '유니크한_키',
