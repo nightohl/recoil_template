@@ -32,6 +32,12 @@ export default function Collections({navigation}) {
           onPress={() => navigation.navigate('ColorBoxes')}
         />
       </View>
+      <View style={styles.container}>
+        <Button
+          title="SearchAnimation"
+          onPress={() => navigation.navigate('SearchAnimation')}
+        />
+      </View>
     </View>
   );
 }
@@ -49,5 +55,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  container: {borderWidth: 2, padding: 5, width: '100%', marginTop: -2},
+  container: {
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    padding: 5,
+    width: '100%',
+    marginTop: -2,
+  },
 });

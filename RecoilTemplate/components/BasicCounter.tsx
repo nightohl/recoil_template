@@ -1,10 +1,16 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
-import {RecoilRoot, useRecoilState} from 'recoil';
+import {
+  RecoilRoot,
+  useRecoilState,
+  useRecoilValue,
+  useSetRecoilState,
+} from 'recoil';
 import {countState} from '@recoil/BasicCounter';
 
 const Counter1 = () => {
   const [count, setCount] = useRecoilState(countState);
+
   return (
     <View style={[styles.container, styles.yellow]}>
       <Text>{count}</Text>
