@@ -1,4 +1,4 @@
-# recoil_template
+# React-Native Recoil Examples
 React-Native에서 Recoil 상태관리 라이브러리를 사용한 여러가지 예시를 정리함.
 
 ## Recoil
