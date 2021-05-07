@@ -2,10 +2,10 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {RecoilRoot} from 'recoil';
 import {RootMyStackParamList} from 'Navigation';
-import {countState} from '@recoil/atoms/BasicCounter';
 
 import Collections from '@components/Collections';
 import BasicCounter from '@components/BasicCounter';
+import ColorBoxes from '@components/ColorBoxes';
 
 const Stack = createStackNavigator<RootMyStackParamList>();
 
@@ -15,6 +15,7 @@ export default function MyStack() {
       <Stack.Navigator>
         <Stack.Screen name="Collections" component={Collections} />
         <Stack.Screen name="BasicCounter" component={BasicCounter} />
+        <Stack.Screen name="ColorBoxes" component={ColorBoxes} />
       </Stack.Navigator>
     </RecoilRoot>
   );
