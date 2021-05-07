@@ -6,13 +6,22 @@ React-Native에서 Recoil 상태관리 라이브러리를 사용한 여러가지
 * [Recoil 공식깃헙](https://github.com/facebookexperimental/Recoil)
 * [Recoil 한글문서](https://recoiljs.org/ko/docs/introduction/core-concepts)
 
+## 실행
+```shell
+$ git clone https://github.com/nightohl/recoil_template.git
+$ cd RecoilTemplate
+$ yarn install
+$ npx pod-install
+$ npx react-native run-ios
+```
+
 ## 예시
 ### 1. BasicCounter
 `atom` 으로 상태를 정의하고, `RecoilRoot`, `useRecoilState`를 통해 컴포넌트간 상태를 공유하는 기본적인 예시
 
 <html>
   <img src="https://user-images.githubusercontent.com/48432932/117424270-96653800-af5c-11eb-9aa7-ad93105fcced.png", height="500px">
-  <img src="https://user-images.githubusercontent.com/48432932/117424601-e6dc9580-af5c-11eb-999f-da00486c6b45.png", height="250px">
+  <img src="https://user-images.githubusercontent.com/48432932/117424601-e6dc9580-af5c-11eb-999f-da00486c6b45.png", height="200px">
 </html>
 
 
